@@ -1,0 +1,41 @@
+{
+    "name": "Python Development",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "containerEnv": {
+        "UV_PROJECT_ENVIRONMENT": "/home/vscode/.venv"
+    },
+    "postCreateCommand": "uv sync --frozen",
+    "features": {
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "installZsh": true,
+            "configureZshAsDefaultShell": true
+        },
+        "ghcr.io/devcontainers-extra/features/starship:1": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "charliermarsh.ruff",
+                "ms-azuretools.vscode-docker",
+                "timonwong.shellcheck",
+                "redhat.vscode-yaml"
+            ],
+            "settings": {
+                "python.defaultInterpreterPath": "/home/vscode/.venv/bin/python",
+                "[python]": {
+                    "editor.defaultFormatter": "charliermarsh.ruff",
+                    "editor.codeActionsOnSave": {
+                        "source.fixAll.ruff": "explicit",
+                        "source.organizeImports.ruff": "explicit"
+                    }
+                },
+                "editor.formatOnSave": true
+            }
+        }
+    }
+}
