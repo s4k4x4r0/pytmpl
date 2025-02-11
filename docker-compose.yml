@@ -3,6 +3,7 @@ services:
     build: .
     command: sh -c "uv sync --frozen && tail -f /dev/null"
     environment:
+      - UV_PROJECT_ENVIRONMENT=/.venv
       - AWS_REGION
       - AWS_DEFAULT_REGION
       - AWS_ACCESS_KEY_ID
