@@ -10,11 +10,9 @@ dependencies = [
 
 [dependency-groups]
 dev = [
-    "types-boto3-custom",
+    "types-boto3-lite>=1.36.26",
+    "types-boto3-sts>=1.36.0",
 ]
-
-[tool.uv.sources]
-types-boto3-custom = { path = "vendored/types_boto3_custom_package" }
 
 [tool.pyright]
 typeCheckingMode = "strict"

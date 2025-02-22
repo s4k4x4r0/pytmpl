@@ -72,14 +72,18 @@ dependencies = [
 
 [package.dev-dependencies]
 dev = [
-    { name = "types-boto3-custom" },
+    { name = "types-boto3-lite" },
+    { name = "types-boto3-sts" },
 ]
 
 [package.metadata]
 requires-dist = [{ name = "boto3", specifier = ">=1.36.17" }]
 
 [package.metadata.requires-dev]
-dev = [{ name = "types-boto3-custom", directory = "vendored/types_boto3_custom_package" }]
+dev = [
+    { name = "types-boto3-lite", specifier = ">=1.36.26" },
+    { name = "types-boto3-sts", specifier = ">=1.36.0" },
+]
 
 [[package]]
 name = "s3transfer"
@@ -112,19 +116,25 @@ wheels = [
 ]
 
 [[package]]
-name = "types-boto3-custom"
+name = "types-boto3-lite"
 version = "1.36.26"
-source = { directory = "vendored/types_boto3_custom_package" }
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "botocore-stubs" },
     { name = "types-s3transfer" },
 ]
+sdist = { url = "https://files.pythonhosted.org/packages/53/0d/82ed4bb14f0540df5d1995db365f9338713df5ebef1613cd656c5babb3e9/types_boto3_lite-1.36.26.tar.gz", hash = "sha256:da144e84ee820d77b736e95a24d3f6b3f64e22c4eaa709d4640edcb283292b8e", size = 71727 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/7f/64/2cc92c8a7b6e360dbfdb4baa2e81e27f12c40c2ac75574b565c80fee8e3c/types_boto3_lite-1.36.26-py3-none-any.whl", hash = "sha256:6d6f1935c49b4da3437a69ed99c1b09f17fa822807859eb6b037522be3b884de", size = 42103 },
+]
 
-[package.metadata]
-requires-dist = [
-    { name = "botocore-stubs" },
-    { name = "types-s3transfer" },
-    { name = "typing-extensions", marker = "python_full_version < '3.12'" },
+[[package]]
+name = "types-boto3-sts"
+version = "1.36.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/02/fc/6e37140fe644a42d67d639eae22a9c3f8563c81ed2d5d617ac95e6227f25/types_boto3_sts-1.36.0.tar.gz", hash = "sha256:fc390a875310ea21238613dd5cbb1b5d2c18c997b17fa7b833a3637c6f103b2f", size = 16514 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/d2/3b/e730e76c08f437631c488352e7156b482543de93a882731c1592dfde6004/types_boto3_sts-1.36.0-py3-none-any.whl", hash = "sha256:69f3a60c1131f9c8e952f4b5ebf438232871418726107e6cf5eceab5ff3c4c97", size = 19981 },
 ]
 
 [[package]]

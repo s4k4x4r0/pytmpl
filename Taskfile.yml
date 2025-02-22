@@ -7,11 +7,3 @@ tasks:
       - docker compose run --remove-orphans {{if .BUILD}}--build{{end}} app {{.CLI_ARGS}}
     vars:
       BUILD: '{{.BUILD | default "false"}}'
-
-  install-boto3-types:
-    desc: "boto3の型定義をインストール (例: task install-boto3-types SERVICES=sts,kms)"
-    requires:
-      vars: [SERVICES]
-    cmds:
-      - uvx mypy_boto3_builder vendored --download-static --product types-boto3-custom --services {{.SERVICES}}
-      - uv add --dev vendored/types_boto3_custom_package
