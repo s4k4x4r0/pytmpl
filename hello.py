@@ -5,11 +5,16 @@ def main():
     print("Hello from pytmpl!")
 
 
+def sum(a: int, b: int) -> int:
+    return a + b
+
+
 if __name__ == "__main__":
     main()
 
-    client = boto3.client("sts")
+    sts_client = boto3.client("sts")
 
-    # Retrieves all regions/endpoints that work with EC2
-    response = client.get_caller_identity()
-    print("Response:", response["UserId"])
+    # AWSアカウントのIDを取得
+    response = sts_client.get_caller_identity()
+    print("AWSアカウントID:", response["UserId"])
+    aaa = sum(1, "a")

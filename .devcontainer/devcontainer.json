@@ -9,6 +9,13 @@
     "postCreateCommand": {
         "starship": "echo 'eval \"$(starship init zsh)\"' >> /home/vscode/.zshrc"
     },
+    "postAttachCommand": {
+        // Pythonの拡張機能でPythonインタプリタを使うため。
+        // これを実行しないと、Pythonの拡張機能でPythonインタプリタを使うことができない。
+        // また、workspaceをマウントしてから実行する必要があるため、
+        // postCreateCommandではなくpostAttachCommandで実行する。
+        "uv": "uv sync --frozen"
+    },
     "features": {
         "ghcr.io/devcontainers/features/docker-in-docker:2": {},
         "ghcr.io/devcontainers/features/common-utils:2": {
