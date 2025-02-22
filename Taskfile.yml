@@ -1,0 +1,19 @@
+version: "3"
+
+tasks:
+  default:
+    cmds:
+      - task: run
+
+  run:
+    desc: アプリケーションを実行します
+    cmds:
+      - docker compose run --remove-orphans {{if .BUILD}}--build{{end}} app {{.CLI_ARGS}}
+    vars:
+      BUILD: '{{default "false" .BUILD}}'
+
+  # 使用例:
+  # 通常実行: task run
+  # ビルド付き実行: task run BUILD=true
+  # 引数付き実行: task run -- arg1 arg2
+  # ビルド付き引数付き実行: task run BUILD=true -- arg1 arg2

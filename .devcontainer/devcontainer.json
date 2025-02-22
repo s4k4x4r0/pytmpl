@@ -7,7 +7,6 @@
         "UV_PROJECT_ENVIRONMENT": "/home/vscode/.venv"
     },
     "postCreateCommand": {
-        "uv": "uv sync --frozen",
         "starship": "echo 'eval \"$(starship init zsh)\"' >> /home/vscode/.zshrc"
     },
     "features": {
@@ -19,7 +18,8 @@
             "installOhMyZshConfig": false
         },
         "ghcr.io/devcontainers-extra/features/starship:1": {},
-        "ghcr.io/devcontainers/features/aws-cli:1": {}
+        "ghcr.io/devcontainers/features/aws-cli:1": {},
+        "ghcr.io/dhoeric/features/hadolint:1": {}
     },
     "customizations": {
         "vscode": {
@@ -29,7 +29,8 @@
                 "charliermarsh.ruff",
                 "ms-azuretools.vscode-docker",
                 "timonwong.shellcheck",
-                "redhat.vscode-yaml"
+                "redhat.vscode-yaml",
+                "exiasr.hadolint"
             ],
             "settings": {
                 "python.defaultInterpreterPath": "/home/vscode/.venv/bin/python",

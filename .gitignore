@@ -31,4 +31,5 @@ ENV/
 .idea/
 .vscode/
 *.swp
-*.swo 
+*.swo
+.ruff_cache/
