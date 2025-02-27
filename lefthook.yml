@@ -1,0 +1,8 @@
+pre-commit:
+  commands:
+    lint:
+      run: task lint -- hello.py
+    format:
+      run: task format -- hello.py
+    hadolint:
+      run: task hadolint -- Dockerfile

@@ -3,6 +3,7 @@ import boto3
 
 def main():
     print("Hello from pytmpl!")
+    print("This is a test!")
 
 
 def sum(a: int, b: int) -> int:
