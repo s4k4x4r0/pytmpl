@@ -7,7 +7,7 @@
         "UV_PROJECT_ENVIRONMENT": "/home/vscode/.venv"
     },
     "postCreateCommand": {
-        "starship": "echo 'eval \"$(starship init zsh)\"' >> /home/vscode/.zshrc"
+        "starship": "echo 'source <(starship init zsh)' >> /home/vscode/.zshrc"
     },
     "postAttachCommand": {
         // Pythonの拡張機能でPythonインタプリタを使うため。
@@ -26,7 +26,8 @@
         },
         "ghcr.io/devcontainers-extra/features/starship:1": {},
         "ghcr.io/devcontainers/features/aws-cli:1": {},
-        "ghcr.io/dhoeric/features/hadolint:1": {}
+        "ghcr.io/dhoeric/features/hadolint:1": {},
+        "ghcr.io/devcontainers-extra/features/lefthook-asdf:1": {}
     },
     "customizations": {
         "vscode": {

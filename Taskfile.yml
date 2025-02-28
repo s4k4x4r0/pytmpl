@@ -7,3 +7,24 @@ tasks:
       - docker compose run --remove-orphans {{if .BUILD}}--build{{end}} app {{.CLI_ARGS}}
     vars:
       BUILD: '{{.BUILD | default "false"}}'
+
+  format:
+    desc: ruffでコードをフォーマットします
+    cmds:
+      - uvx ruff format {{.FILES}}
+    vars:
+      FILES: '{{.CLI_ARGS | default "**/*.py"}}'
+
+  lint:
+    desc: ruffでコードをリントし、自動修正を適用します
+    cmds:
+      - uvx ruff check --fix {{.FILES}}
+    vars:
+      FILES: '{{.CLI_ARGS | default "**/*.py"}}'
+
+  hadolint:
+    desc: hadolintでDockerfileをリントします
+    cmds:
+      - hadolint {{.FILES}}
+    vars:
+      FILES: '{{.CLI_ARGS | default "Dockerfile"}}'
